@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recent UE & WebGL Works</title>
+    <style>
+        body {
+            font-family: "Microsoft YaHei Light", Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px; /* Add padding */
+            background: linear-gradient(to bottom right, #413131, #265158, #5e8646, #2c2c2c, #413131);
+            background-size: 400% 400%;
+            animation: gradientBG 15s ease infinite;
+            color: #ddd;
+        }
+
+        @keyframes gradientBG {
+            0% { background-position: 0% 0%; }
+            50% { background-position: 100% 100%; }
+            100% { background-position: 0% 0%; }
+        }
+
+        h1, h3 {
+            border-bottom: 1px solid #555; /* Add divider line */
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+        }
+
+        p {
+            margin-bottom: 20px;
+            color: #ccc;
+            font-size: 1rem;
+            line-height: 1.6;
+        }
+
+        .gallery-item {
+            margin-bottom: 20px; /* Add spacing */
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        .gallery-item iframe {
+            aspect-ratio: 1920 / 720; /* Set aspect ratio to 1920:720 */
+            width: 100%;
+            height: auto;
+            display: block;
+            border: none; /* Remove border */
+        }
+
+        .gallery-item2 iframe {
+            aspect-ratio: 1644 / 3840; /* Set aspect ratio to 216:72 */
+            width: 100%;
+            border-radius: 8px; /* Uniform rounded corners */
+            height: auto;
+            display: block;
+            border: none; /* Remove border */
+        }
+
+        .gallery-item3 iframe {
+            aspect-ratio: 1/ 1; /* Set aspect ratio to 216:72 */
+            width: 100%;
+            border-radius: 8px; /* Uniform rounded corners */
+            height: auto;
+            display: block;
+            border: none; /* Remove border */
+        }
+        .gallery-item4 iframe {
+            aspect-ratio: 344/ 144; /* Set aspect ratio to 216:72 */
+            width: 100%;
+            border-radius: 8px; /* Uniform rounded corners */
+            height: auto;
+            display: block;
+            border: none; /* Remove border */
+        }
+        a {
+            color: #ff9800;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        .back-link {
+            margin-top: 20px;
+            display: block;
+            font-size: 0.9rem;
+            color: #ff9800;
+            text-decoration: none;
+        }
+
+        .back-link:hover {
+            text-decoration: underline;
+        }
+
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr); /* Set default to 3 columns */
+            gap: 15px; /* Spacing between columns */
+        }
+    </style>
+</head>
+<body>
+    <h1>Recent Works</h1>
+    <p>
+        Below are some recent works, covering WebGL and UE content.
+    </p>
+    <h3>Babylon.js Animation Control</h3>
+    <div class="gallery-item">
+        <iframe src="https://kysaint.github.io/K/" scrolling="no" frameborder="0"></iframe>
+    </div>
+    <p>
+        Animation effects quickly implemented using Babylon.js and Copilot AI, more efficient compared to UE Blueprints.
+    </p>
+    <h3>Mouse Model and Material Control</h3>
+    <div class="gallery-item3">
+        <iframe class="mouse-model-iframe" src="https://kysaint.github.io/K3/" scrolling="no" frameborder="0"></iframe>
+    </div>
+    <p>
+        This is a project to learn Web3D technology, combining Babylon.js to achieve PBR material adjustment functionality, showcasing the flexibility of Web3D.
+    </p>
+    <div class="gallery-item4">
+        <iframe src="//player.bilibili.com/player.html?isOutside=true&aid=114332583073448&bvid=BV1Z1ogY3E1i&cid=29400632801&p=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"></iframe>
+    </div>
+    <p>
+        Production process record.
+    </p>
+
+    <h1>Unreal Engine 5 Works (Sound Recommended)</h1>
+    <h3>UE FFT Audio Analysis Effect</h3>
+    <div class="gallery-item">
+        <iframe src="//player.bilibili.com/player.html?isOutside=true&aid=114340501983438&bvid=BV1QFopYhEHt&cid=29424945874&p=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"></iframe>
+    </div>
+    <p>
+        Using UE audio FFT analyzer to control object scaling, combined with physical collision simulation.
+    </p>
+    <div class="gallery-item">
+        <iframe src="//player.bilibili.com/player.html?isOutside=true&aid=114340501917950&bvid=BV1hFopYhEXU&cid=29424946761&p=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"></iframe>
+    </div>
+    <p>
+        Added position constraints on the basic functionality, presenting a dynamic effect similar to monsters.
+    </p>
+    <div class="gallery-item">
+        <iframe src="//player.bilibili.com/player.html?isOutside=true&aid=114340518696979&bvid=BV1bPopYZEgn&cid=29425008929&p=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"></iframe>
+    </div>
+    <p>
+        Added particle emitters and bound them to FFT average value thresholds, simulating effects of fireworks synchronized with music rhythm.
+    </p>
+    <h3>UE Vehicle Binding</h3>
+    <p>
+        Due to legacy issues in previous work, researched UE's vehicle binding.
+    </p>
+    <div class="gallery-item">
+        <iframe src="//player.bilibili.com/player.html?isOutside=true&aid=114340518762011&bvid=BV1SPopYZEKq&cid=29425009127&p=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"></iframe>
+    </div>
+    <p>
+        Achieved basic vehicle movement, tire steering, and rotation animations completed.
+    </p>
+    <div class="gallery-item">
+        <iframe src="//player.bilibili.com/player.html?isOutside=true&aid=114340518697248&bvid=BV1bPopYZELB&cid=29425009087&p=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"></iframe>
+    </div>
+    <p>
+        Attempted to create a simple mini-game, added destructible objects, enemies, particle effects, and sound effects (e.g., bullet firing, collision, helicopter rotor, etc.).
+    </p>
+    <div class="gallery-item">
+        <iframe src="//player.bilibili.com/player.html?isOutside=true&aid=114340518695982&bvid=BV1bPopYZEb2&cid=29425009219&p=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"></iframe>
+    </div>
+    <p>
+        Created a prototype of an auto-generated map racing game, using simple acceleration control logic, with cool music and lighting effects.
+    </p>
+    
+    <h3>Simple Elimination Game</h3>
+  
+    <p>
+        Inspired by a similar game on mobile, decided to see if I could create one myself.
+    </p>
+    <div class="gallery-item">
+        <iframe src="//player.bilibili.com/player.html?isOutside=true&aid=114340518696337&bvid=BV1bPopYZEh5&cid=29425010076&p=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"></iframe>
+    </div>
+    <p>
+        The process of gradually implementing game logic.
+    </p>
+    <div class="gallery-item2 iframe">
+        <iframe src="//player.bilibili.com/player.html?isOutside=true&aid=114340518696526&bvid=BV1bPopYZEio&cid=29425009635&p=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"></iframe>
+    </div>
+    <p>
+        Final presentation effect packaged to Android phones. The sunset background inherits the previous FFT control experience.
+    </p>
+
+
+    <a href="portfolio.html" class="back-link">Back to Portfolio</a>
+</body>
+</html>

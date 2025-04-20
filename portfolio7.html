@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio 7</title>
+    <style>
+        body {
+            font-family: "Microsoft YaHei Light", Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px; /* 添加内边距 */
+            background: linear-gradient(to bottom right, #413131, #265158, #5e8646, #2c2c2c, #413131);
+            background-size: 400% 400%;
+            animation: gradientBG 15s ease infinite;
+            color: #ddd;
+        }
+
+        @keyframes gradientBG {
+            0% { background-position: 0% 0%; }
+            50% { background-position: 100% 100%; }
+            100% { background-position: 0% 0%; }
+        }
+
+        h1, h3 {
+            border-bottom: 1px solid #555; /* 添加分割线 */
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+        }
+
+        p {
+            margin-bottom: 20px;
+            color: #ccc;
+            font-size: 1rem;
+            line-height: 1.6;
+        }
+
+        .gallery-item {
+            margin-bottom: 20px; /* 添加间距 */
+            border-radius: 8px; /* 统一圆角效果 */
+            overflow: hidden;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        .gallery-item iframe {
+            aspect-ratio: 192 / 108; /* 设置长宽比为 192:108 */
+            width: 100%;
+            height: auto;
+            display: block;
+            border: none; /* 移除边框 */
+        }
+
+        a {
+            color: #ff9800;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        .back-link {
+            margin-top: 20px;
+            display: block;
+            font-size: 0.9rem;
+            color: #ff9800;
+            text-decoration: none;
+        }
+
+        .back-link:hover {
+            text-decoration: underline;
+        }
+
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr); /* 设置为默认 3 列 */
+            gap: 15px; /* 列之间的间距 */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Portfolio 7</h1>
+        <p>This portfolio showcases my work on product main image and animation design.</p>
+        <ul>
+            <li>Defined rendering specifications and configured batch rendering sessions in Cinema 4D.</li>
+            <li>Designed and created product animations, including modeling, lighting, and post-production.</li>
+            <li>Produced product installation animations for after-sales purposes.</li>
+        </ul>
+    </div>
+</body>
+</html>

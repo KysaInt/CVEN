@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio 6</title>
+    <style>
+        body {
+            font-family: "Microsoft YaHei Light", Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px; /* 添加内边距 */
+            background: linear-gradient(to bottom right, #413131, #265158, #5e8646, #2c2c2c, #413131);
+            background-size: 400% 400%;
+            animation: gradientBG 15s ease infinite;
+            color: #ddd;
+        }
+
+        @keyframes gradientBG {
+            0% { background-position: 0% 0%; }
+            50% { background-position: 100% 100%; }
+            100% { background-position: 0% 0%; }
+        }
+
+        h1, h3 {
+            border-bottom: 1px solid #555; /* 添加分割线 */
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+        }
+
+        p {
+            margin-bottom: 20px;
+            color: #ccc;
+            font-size: 1rem;
+            line-height: 1.6;
+        }
+
+        .gallery {
+            max-width: 100%; /* 取消宽度限制 */
+            margin: 0 auto; /* 居中对齐 */
+            display: grid;
+            grid-template-columns: repeat(4, 1fr); /* 固定为 4 列 */
+            gap: 15px;
+        }
+
+        .gallery-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 8px; /* 统一圆角效果 */
+            backdrop-filter: blur(10px);
+            background: rgba(50, 50, 50, 0.9);
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+            aspect-ratio: 9 / 16; /* 限制比例为 9:16 */
+        }
+
+        .gallery-item iframe,
+        .gallery-item video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover; /* 确保内容填充整个区域 */
+            display: block;
+        }
+
+        .gallery.record-gallery .gallery-item {
+            aspect-ratio: 128 / 72; /* 设置长宽比为 128:72 */
+        }
+
+        a {
+            color: #ff9800;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        .back-link {
+            margin-top: 20px;
+            display: block;
+            font-size: 0.9rem;
+            color: #ff9800;
+            text-decoration: none;
+        }
+
+        .back-link:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Portfolio 6</h1>
+        <p>This portfolio highlights my work on dynamic virtual live scene design.</p>
+        <ul>
+            <li>Modeled scenes using Rhino and created animations with Cinema 4D.</li>
+            <li>Developed real-time dynamic scenes with Unreal Engine 4.</li>
+            <li>Processed overlays and effects using Photoshop and After Effects.</li>
+        </ul>
+    </div>
+</body>
+</html>

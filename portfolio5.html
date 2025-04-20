@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>C4D Animation Works</title>
+    <style>
+        body {
+            font-family: "Microsoft YaHei Light", Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px; /* Add padding */
+            background: linear-gradient(to bottom right, #413131, #265158, #5e8646, #2c2c2c, #413131);
+            background-size: 400% 400%;
+            animation: gradientBG 15s ease infinite;
+            color: #ddd;
+        }
+
+        @keyframes gradientBG {
+            0% { background-position: 0% 0%; }
+            50% { background-position: 100% 100%; }
+            100% { background-position: 0% 0%; }
+        }
+
+        h1, h3 {
+            border-bottom: 1px solid #555; /* Add divider line */
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+        }
+
+        p {
+            margin-bottom: 20px;
+            color: #ccc;
+            font-size: 1rem;
+            line-height: 1.6;
+        }
+
+        .gallery-item {
+            margin-bottom: 20px; /* Add spacing */
+            border-radius: 8px; /* Unified rounded corners */
+            overflow: hidden;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        .gallery-item iframe {
+            aspect-ratio: 216 / 72; /* Set aspect ratio to 216:72 */
+            width: 100%;
+            height: auto;
+            display: block;
+            border: none; /* Remove border */
+        }
+        .gallery-item2 iframe {
+            aspect-ratio: 344/ 144; /* Set aspect ratio to 216:72 */
+            width: 100%;
+            height: auto;
+            display: block;
+            border: none; /* Remove border */
+            border-radius: 8px; /* Unified rounded corners */
+        }
+        .gallery-item3 iframe {
+            aspect-ratio: 192/108; /* Set aspect ratio to 216:72 */
+            width: 100%;
+            height: auto;
+            display: block;
+            border: none; /* Remove border */
+            border-radius: 8px; /* Unified rounded corners */
+        }
+        a {
+            color: #ff9800;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        .back-link {
+            margin-top: 20px;
+            display: block;
+            font-size: 0.9rem;
+            color: #ff9800;
+            text-decoration: none;
+        }
+
+        .back-link:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    
+    <h1>C4D Animation Works</h1>
+    <p>
+        This page showcases my exploration of Cinema 4D and its related plugins and renderers during my independent research. Due to compatibility issues between different plugins and renderers, the works below utilize V-ray, Corona, and the default renderer of C4D R21.
+    </p>
+    <h3>Microsoft-Style Advertisement</h3>
+    <div class="gallery-item2">
+        <iframe src="//player.bilibili.com/player.html?isOutside=true&aid=742096983&bvid=BV19k4y1p7hj&cid=1157159399&p=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"></iframe>
+    </div>
+    <p>
+        Feeling that the previous animation works were somewhat modest, I created this second animation inspired by Microsoft's advertisements. The most time-consuming part was using abstract deformers like wind to replicate the effects of the original video. The frequent appearance of frosted glass and semi-transparent volumetric fog also made rendering time-consuming.
+    </p>
+    
+    
+    <h3>First C4D Animation Series</h3>
+    <div class="gallery-item">
+        <iframe src="//player.bilibili.com/player.html?isOutside=true&aid=114330636914818&bvid=BV13sd6Y5EWT&cid=29393093353&p=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"></iframe>
+    </div>
+    <p>
+        Selected three pictures of cats. The main focus here was the effect of viscous liquid simulation, which took a long time to adjust to ensure that the material could accurately display in the correct position after the object deforms.
+    </p>
+    <div class="gallery-item">
+        <iframe src="//player.bilibili.com/player.html?isOutside=true&aid=114330636916399&bvid=BV13sd6Y5E51&cid=29393093388&p=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"></iframe>
+    </div>
+    <p>
+        C4D soft body simulation. The left and right sides show different effects under the same model with different structural lines.
+    </p>
+    <div class="gallery-item">
+        <iframe src="//player.bilibili.com/player.html?isOutside=true&aid=114330636915368&bvid=BV13sd6Y5EYW&cid=29393093528&p=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"></iframe>
+    </div>
+    <p>
+        Fracture and elastic objects.
+    </p>
+    <div class="gallery-item">
+        <iframe src="//player.bilibili.com/player.html?isOutside=true&aid=114330636917153&bvid=BV1gsd6Y5EQm&cid=29393093556&p=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"></iframe>
+    </div>
+    <p>
+        Soft body generated by splines. It took a long time to find the appropriate number of segments and structural lines to achieve a perfectly smooth elastic effect.
+    </p>
+    <div class="gallery-item">
+        <iframe src="//player.bilibili.com/player.html?isOutside=true&aid=114330636982427&bvid=BV1hsd6Y5ELE&cid=29393093681&p=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"></iframe>
+    </div>
+    <p>
+        A combination of soft body, gas, and liquid simulation. At this point in the project, I discovered that the gas smoke effect only supports the default renderer. After unsuccessful attempts, I had to reset the lighting and materials in the default renderer.
+    </p>
+    <div class="gallery-item">
+        <iframe src="//player.bilibili.com/player.html?isOutside=true&aid=114330637046675&bvid=BV1Qsd6Y5Eed&cid=29393093820&p=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"></iframe>
+    </div>
+    <p>
+        The same liquid simulation effect, but the emitter is made into a more interesting form.
+    </p>
+    <div class="gallery-item">
+        <iframe src="//player.bilibili.com/player.html?isOutside=true&aid=114330636916113&bvid=BV13sd6Y5Euq&cid=29393093856&p=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"></iframe>
+    </div>
+    <p>
+        Boxes that deform upon collision.
+    </p>
+    <div class="gallery-item">
+        <iframe src="//player.bilibili.com/player.html?isOutside=true&aid=114330636916108&bvid=BV13sd6Y5EuD&cid=29393093898&p=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"></iframe>
+    </div>
+    <p>
+        Steel pipes with different elastic recovery forces!
+    </p>
+    <h3>Ceiling Fan Modeling and Installation Animation</h3>
+    <div class="gallery-item2">
+        <iframe src="//player.bilibili.com/player.html?isOutside=true&aid=113294509611322&bvid=BV1km28YLEQD&cid=26259620993&p=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"></iframe>
+    </div>
+    <p>
+        A record of the modeling and animation production process.
+    </p>
+    <div class="gallery-item3">
+        <iframe src="//player.bilibili.com/player.html?isOutside=true&aid=113294509742599&bvid=BV1pm28YjERw&cid=26259620339&p=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"></iframe>
+    </div>
+    <div class="gallery-item3">
+        <iframe src="//player.bilibili.com/player.html?isOutside=true&aid=113294509611320&bvid=BV1km28YLEQX&cid=26259621612&p=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"></iframe>
+    </div>
+    <p>
+        Initial version and revised version.
+    </p>
+    <a href="portfolio.html" class="back-link">Back to Portfolio</a>
+</body>
+</html>

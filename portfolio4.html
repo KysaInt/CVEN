@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio 4</title>
+    <style>
+        body {
+            font-family: "Microsoft YaHei Light", Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(to bottom right, #413131, #265158, #5e8646, #2c2c2c, #413131);
+            background-size: 400% 400%;
+            animation: gradientBG 15s ease infinite;
+            color: #ddd;
+            overflow-x: hidden; /* Disable horizontal scrollbar */
+        }
+
+        @keyframes gradientBG {
+            0% { background-position: 0% 0%; }
+            50% { background-position: 100% 100%; }
+            100% { background-position: 0% 0%; }
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        h1, h3 {
+            border-bottom: 1px solid #555; /* Add divider line */
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+        }
+        .gallery {
+            column-count: 3; /* Default 3 columns */
+            column-gap: 10px; /* Gap between columns */
+        }
+        .gallery-item {
+            break-inside: avoid; /* Prevent elements from splitting across columns */
+            margin-bottom: 10px; /* Spacing between elements */
+            border-radius: 8px; /* Uniform rounded corners */
+            overflow: hidden;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5); /* Adjust shadow */
+        }
+        .gallery-item img {
+            width: 100%;
+            height: auto; /* Maintain image aspect ratio */
+            display: block;
+        }
+        .back-link {
+            display: inline-block;
+            margin-top: 20px;
+            color: #00f;
+            text-decoration: none;
+        }
+        .back-link:hover {
+            text-decoration: underline;
+        }
+        .overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+        }
+        #fullscreen-image {
+            max-width: 90%;
+            max-height: 90%;
+            border-radius: 8px; /* Uniform rounded corners */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Portfolio 4</h1>
+        <p>This portfolio demonstrates my work on art installations and parametric modeling design.</p>
+        <ul>
+            <li>Created curved landscape sculpture models using Rhino.</li>
+            <li>Rendered designs with Enscape for high-quality outputs.</li>
+            <li>Integrated parametric design elements using Grasshopper.</li>
+        </ul>
+    </div>
+</body>
+</html>

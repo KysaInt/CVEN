@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resume</title>
+    <style>
+        body {
+            font-family: "Microsoft YaHei Light", Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(to bottom right, #413131, #265158, #5e8646, #2c2c2c, #413131);
+            background-size: 400% 400%;
+            animation: gradientBG 15s ease infinite;
+            color: #ddd;
+        }
+
+        @keyframes gradientBG {
+            0% { background-position: 0% 0%; }
+            50% { background-position: 100% 100%; }
+            100% { background-position: 0% 0%; }
+        }
+
+        .container {
+            max-width: 80vw;
+            margin: 10px auto;
+            padding: 15px;
+            background: rgba(50, 50, 50, 0.9);
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        h1, h2 {
+            color: #fff;
+            border-bottom: 1px solid #555;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+            background: rgba(60, 60, 60, 0.9);
+            backdrop-filter: blur(10px);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        table th, table td {
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            padding: 8px;
+            text-align: left;
+            color: #ddd;
+        }
+
+        table th {
+            background-color: rgba(80, 80, 80, 0.9);
+        }
+
+        .expandable {
+            cursor: pointer;
+            color: #ff9800;
+            text-decoration: underline;
+        }
+
+        a {
+            color: #ff9800;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        .details {
+            display: none;
+            margin-top: 10px;
+            padding: 10px;
+            background: rgba(60, 60, 60, 0.9);
+            border-radius: 8px;
+            color: #ddd;
+        }
+
+        .info-section {
+            display: flex;
+            align-items: flex-start;
+            gap: 20px;
+        }
+
+        .info-section table {
+            flex: 1;
+            margin: 0;
+        }
+
+        .info-section img {
+            max-width: 172px;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+            object-fit: cover;
+            background: rgba(60, 60, 60, 0.9);
+            backdrop-filter: blur(10px);
+        }
+
+        .experience-container {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .experience-card {
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            background: rgba(50, 50, 50, 0.9);
+            border-radius: 8px;
+            padding: 15px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+            color: #ddd;
+            overflow: hidden;
+        }
+
+        .experience-card .time,
+        .experience-card .salary {
+            white-space: nowrap;
+        }
+
+        @media (max-width: 480px) {
+            .experience-card .time,
+            .experience-card .salary {
+                position: static;
+                margin-top: 10px;
+                text-align: left;
+            }
+        }
+
+        .experience-card h3 {
+            margin: 0 0 10px;
+            color: #fff;
+            margin-left: 20px;
+        }
+
+        .experience-card .company {
+            font-size: 14px;
+            color: #fff;
+            margin-left: 20px;
+            margin-bottom: 10px;
+        }
+
+        .experience-card .time {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            font-size: 16px;
+            color: #fff;
+        }
+
+        .experience-card .salary {
+            position: absolute;
+            top: 40px;
+            right: 15px;
+            font-size: 14px;
+            color: #aaa;
+        }
+
+        .experience-card p {
+            margin: 0;
+            line-height: 1.5;
+        }
+
+        .experience-card ul {
+            margin: 10px 0 0;
+            padding-left: 20px;
+        }
+
+        .experience-card ul li {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .experience-card a {
+            color: #ff9800;
+            text-decoration: none;
+        }
+
+        .experience-card a:hover {
+            text-decoration: underline;
+        }
+
+        .experience-card .portfolio-link {
+            position: static;
+            margin-top: 10px;
+            display: block;
+            text-align: right;
+            color: #ff9800;
+            text-decoration: none;
+            font-size: 0.9rem;
+        }
+
+        .experience-card .portfolio-link:hover {
+            text-decoration: underline;
+        }
+
+        .experience-card .software {
+            font-size: 0.9rem;
+            color: #aaa;
+            margin-left: 20px;
+            margin-bottom: 10px;
+        }
+
+        .tooltip {
+            position: relative;
+            display: inline-block;
+            cursor: pointer;
+        }
+
+        .tooltip .tooltiptext {
+            visibility: hidden;
+            width: 300px;
+            background-color: rgba(60, 60, 60, 0.9);
+            color: #fff;
+            text-align: center;
+            border-radius: 6px;
+            padding: 10px;
+            position: absolute;
+            z-index: 1;
+            bottom: 125%;
+            left: 50%;
+            margin-left: -150px;
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+
+        .tooltip:hover .tooltiptext {
+            visibility: visible;
+            opacity: 1;
+        }
+    </style>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const expandableElements = document.querySelectorAll(".expandable");
+            expandableElements.forEach(element => {
+                element.addEventListener("click", () => {
+                    const id = element.getAttribute("data-target");
+                    const details = document.getElementById(id);
+                    if (details.style.display === "none" || details.style.display === "") {
+                        details.style.display = "block";
+                    } else {
+                        details.style.display = "none";
+                    }
+                });
+            });
+        });
+    </script>
+</head>
+<body>
+    <div class="container">
+        <h1>AYE's Resume & Portfolio</h1>
+        <h3>Basic Information</h3>
+        <div class="info-section">
+            <table>
+                <tr><th>Name</th><td>Zhu Zhiye</td></tr>
+                <tr><th>Residence</th><td>Wuhan, Hubei</td></tr>
+                <tr><th>Birthday</th><td>1995/05/05</td></tr>
+                <tr><th>Phone</th><td>15900765489</td></tr>
+            </table>
+            <img src="head/b.png" alt="Profile Photo">
+        </div>
+
+        <h3>Main Experiences</h3>
+        <div class="experience-container">
+            <div class="experience-card">
+                <h3>Children's Illustration Design</h3>
+                <div class="company">Wuhan Pinsheng Cultural Media Co., Ltd.</div>
+                <div class="time">2016.06-2016.11</div>
+                <div class="salary">$280 (Internship)</div>
+                <p class="software">Photoshop</p>
+                <ul>
+                    <li class="tooltip">Used a drawing tablet with Photoshop to color line art.
+                        <span class="tooltiptext">During the internship at Wuhan Pinsheng Cultural Media Co., Ltd., I was responsible for coloring children's illustrations using a drawing tablet and Photoshop, enhancing the visual appeal of the illustrations.</span>
+                    </li>
+                </ul>
+            </div>
+            <div class="experience-card">
+                <h3>Commercial CAD Construction Drawings/Renderings</h3>
+                <div class="company">Wuhan Donghu Decoration Engineering Co., Ltd.</div>
+                <div class="time">2017.03-2019.03</div>
+                <div class="salary">$280-$700</div>
+                <p class="software">Photoshop/AutoCAD/3ds Max/V-Ray</p>
+                <ul>
+                    <li class="tooltip">Created standard construction drawings and commercial renderings using PS/CAD/3DSMAX/VRAY.
+                        <span class="tooltiptext">At Wuhan Donghu Decoration Engineering Co., Ltd., I was responsible for creating construction drawings and renderings for commercial projects using tools like Photoshop, AutoCAD, 3ds Max, and V-Ray.</span>
+                    </li>
+                </ul>
+                <a href="portfolio2.html" target="_blank" class="portfolio-link">Portfolio Link</a>
+            </div>
+            <div class="experience-card">
+                <h3>Exhibition Hall/Furniture Product Modeling and Rendering</h3>
+                <div class="company">Shanghai Mulimuwa Industrial Co., Ltd.</div>
+                <div class="time">2020.05-2021.04</div>
+                <div class="salary">$1120-$1680</div>
+                <p class="software">SketchUp/3ds Max/V-Ray/Rhino/Cinema 4D/Blender</p>
+                <ul>
+                    <li class="tooltip">Used SketchUp for exhibition hall layout and 3dsMAX+Vray for furniture product modeling and rendering.
+                        <span class="tooltiptext">At Shanghai Mulimuwa Industrial Co., Ltd., I was responsible for modeling and rendering exhibition halls and furniture products using SketchUp, 3ds Max, and V-Ray.</span>
+                    </li>
+                    <li class="tooltip">Explored Rhino/C4D to enhance modeling skills.
+                        <span class="tooltiptext">Improved modeling skills by learning Rhino and C4D.</span>
+                    </li>
+                </ul>
+                <a href="portfolio3.html" target="_blank" class="portfolio-link">Portfolio Link</a>
+            </div>
+            <div class="experience-card">
+                <h3>Art Installations/Parametric Modeling Design</h3>
+                <div class="company">Shanghai Wuding Landscape Design Consulting Co., Ltd.</div>
+                <div class="time">2021.05-2022.04</div>
+                <div class="salary">$2100</div>
+                <p class="software">Rhino/Enscape/Grasshopper/V-ray</p>
+                <ul>
+                    <li class="tooltip">Created curved landscape sculpture models using Rhino and rendered with Enscape.
+                        <span class="tooltiptext">At Shanghai Wuding Landscape Design Consulting Co., Ltd., I was responsible for designing art installations and parametric models using Rhino and Grasshopper.</span>
+                    </li>
+                    <li class="tooltip">Learned Grasshopper to integrate more parametric design elements into models.
+                        <span class="tooltiptext">Enhanced parametric design skills by learning Grasshopper.</span>
+                    </li>
+                </ul>
+                <a href="portfolio4.html" target="_blank" class="portfolio-link">Portfolio Link</a>
+            </div>
+            <div class="experience-card">
+                <h3>Study and Research</h3>
+                <div class="company">During Unemployment</div>
+                <div class="time">2022.05-2023.04</div>
+                <div class="salary">-</div>
+                <p class="software">Cinema 4D/Stable Diffusion/Blender/OC/RS</p>
+                <ul>
+                    <li class="tooltip">Studied C4D animation and related plugins, completed independent animation projects.
+                        <span class="tooltiptext">Focused on learning Cinema 4D animation and its plugins, completing several independent animation projects.</span>
+                    </li>
+                    <li class="tooltip">Explored local Stable Diffusion and its mainstream plugins and models.
+                        <span class="tooltiptext">Conducted in-depth research on local Stable Diffusion and its mainstream plugins and models.</span>
+                    </li>
+                </ul>
+                <a href="portfolio5.html" target="_blank" class="portfolio-link">Portfolio Link</a>
+            </div>
+            <div class="experience-card">
+                <h3>Dynamic Virtual Live Scene Design</h3>
+                <div class="company">Hangzhou Qingtai Intelligent Co., Ltd.</div>
+                <div class="time">2023.05-2024.01</div>
+                <div class="salary">$2100-$2660</div>
+                <p class="software">Rhino/Cinema 4D/X-particles/Unreal Engine 4/AE/PS</p>
+                <ul>
+                    <li class="tooltip">Used Rhino for modeling, C4D for animation, and UE4 for real-time dynamic scenes.
+                        <span class="tooltiptext">At Hangzhou Qingtai Intelligent Co., Ltd., I was responsible for designing and creating dynamic virtual live scenes.</span>
+                    </li>
+                    <li class="tooltip">Processed simple live room overlays and dynamic effects using PS/AE.
+                        <span class="tooltiptext">Used PS and AE to process live room overlays and dynamic effects.</span>
+                    </li>
+                </ul>
+                <a href="portfolio6.html" target="_blank" class="portfolio-link">Portfolio Link</a>
+            </div>
+            <div class="experience-card">
+                <h3>Product Main Image/Animation Design and Production</h3>
+                <div class="company">Hangzhou Shunsongshangqi Technology Co., Ltd.</div>
+                <div class="time">2024.03-2024.08</div>
+                <div class="salary">$2520</div>
+                <p class="software">Cinema 4D/Rhino/AE</p>
+                <ul>
+                    <li class="tooltip">Defined rendering specifications, configured rendering sessions in C4D for fast batch rendering of product images.
+                        <span class="tooltiptext">At Hangzhou Shunsongshangqi Technology Co., Ltd., I was responsible for rendering product main images and designing product animations using Cinema 4D and Rhino.</span>
+                    </li>
+                    <li class="tooltip">Responded to operational needs, independently conceived and created product animations, including modeling, lighting, material processing, and post-production music and sound effects.
+                        <span class="tooltiptext">Independently designed and created product animations based on operational needs.</span>
+                    </li>
+                    <li class="tooltip">Created product installation animations for after-sales needs.
+                        <span class="tooltiptext">Produced product installation animations for after-sales purposes.</span>
+                    </li>
+                </ul>
+                <a href="portfolio7.html" target="_blank" class="portfolio-link">Portfolio Link</a>
+            </div>
+            <div class="experience-card">
+                <h3>Study and Research</h3>
+                <div class="company">During Unemployment</div>
+                <div class="time">2024.08-Present</div>
+                <div class="salary">-</div>
+                <p class="software">Unreal E5/Babylon.js/Git/Blender/Figma</p>
+                <ul>
+                    <li class="tooltip">Researched UE5 Blueprint functionality, independently created music visualization projects and simple elimination games.
+                        <span class="tooltiptext">Focused on researching Unreal Engine 5 Blueprint functionality, completing music visualization projects and simple elimination games.</span>
+                    </li>
+                    <li class="tooltip">Used Babylon.js and Copilot with GitPages to create static web pages.
+                        <span class="tooltiptext">Combined Babylon.js and Copilot with GitPages to create static web pages.</span>
+                    </li>
+                </ul>
+                <a href="portfolio8.html" target="_blank" class="portfolio-link">Portfolio Link</a>
+            </div>
+        </div>
+
+        <h3>Education</h3>
+        <table>
+            <tr>
+                <th>School</th>
+                <th>Major</th>
+                <th>Time</th>
+            </tr>
+            <tr>
+                <td>Hubei Ecological Engineering College</td>
+                <td>Interior Design Construction and Management (Associate Degree)</td>
+                <td>2013-2016</td>
+            </tr>
+            <tr>
+                <td>Wuhan University of Science and Technology</td>
+                <td>Visual Communication and Design (Non-Full-Time Bachelor's Degree)</td>
+                <td>2017-2021</td>
+            </tr>
+        </table>
+    </div>
+</body>
+</html>
